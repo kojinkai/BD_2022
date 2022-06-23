@@ -1,0 +1,34 @@
+@import '../../styles/_colours';
+@import '../../styles/_type';
+@import '../../styles/_breakpoints';
+
+.page-link {
+
+  @include breakpoint(medium) {
+    font-size: 1.5rem;
+  }
+
+  background: darken($royal, 5);
+  border: 2px solid $white;
+  border-radius: 8px;
+  color: $white;
+  display: inline-block;
+  font-family: $bodycopy;
+  font-size: 1.2rem; 
+  font-weight: 700;  
+  padding: 0.8em;  
+  text-decoration: none;  
+  transition: all .2s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:hover,
+  &:focus {
+    background: darken($royal, 10);
+    border-color: darken($royal, 10);
+    outline: 0;
+    text-decoration: none;    
+  }
+}

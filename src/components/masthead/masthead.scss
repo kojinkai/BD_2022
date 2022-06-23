@@ -1,0 +1,86 @@
+@import '../../styles/_colours';
+@import '../../styles/_type';
+@import '../../styles/_box-model';
+@import '../../styles/_breakpoints';
+
+.masthead {
+
+  @include breakpoint(small) {
+    display: none;
+  }
+
+  background-color: $white;
+  height: 90px;
+  left: 0; 
+  margin-bottom: 0;  
+  position: fixed;
+  right: 0;
+  top: 0; 
+  z-index: 1030;
+
+
+
+  &__navigation {
+    @include clearfix;
+    list-style: none;
+    margin: 0 0 0 10%;
+    padding-left: 0; 
+    width: 80%;
+  }
+
+  &__item {
+    list-style: none;    
+    float: left;
+    width: 25%;
+  }
+
+  &__link {
+    @include pix18;
+    color: $royal;
+    cursor: pointer;
+    display: block;
+    font-family: $bodycopy;
+    font-weight: 700;
+    line-height: 70px;      
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;      
+    text-transform: uppercase;
+
+    &:before,
+    &:after {
+      display: inline-block;
+      opacity: 0;
+      position: relative;
+      bottom: 1px;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    &:before {
+      content: '{';
+      margin-right: 10px;
+      transform: translateX(20px); 
+    }
+
+    &:after {
+      content: '}';
+      margin-left: 10px;
+      transform: translateX(-20px);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      color: $royal;
+      outline: none;
+
+      &:before,
+      &:after {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+    }    
+  }
+}

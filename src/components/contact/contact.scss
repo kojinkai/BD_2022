@@ -1,0 +1,95 @@
+@import '../../styles/_colours';
+@import '../../styles/_type';
+@import '../../styles/_breakpoints';
+
+.contact {
+  background-color: $darkgrey;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  &__container {
+    @include breakpoint(medium) {
+      margin-top: 150px;
+    }
+  }
+
+  &__media-list {
+    @include breakpoint(small) {
+      max-width: 20rem;
+      width: 100%;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    margin: 32px auto 16px;
+    max-width: 75rem;
+    width: 80%;
+
+  }
+
+  &__media-item {
+    border-radius: 50%;
+    list-style: none;
+  }
+
+  &__item-link {
+
+    @include breakpoint(medium) {
+      font-size: 8rem;
+    }
+
+    @include breakpoint(small) {
+      font-size: 4rem;
+    }
+
+    @include breakpoint(large) {
+      font-size: 12.5rem;
+    }
+
+    position: relative;
+
+    &:hover,
+    &:focus {
+      color: $navy;
+      &:after {
+        transform:scale(0.9);
+        opacity: 1;          
+      }          
+    }
+    &:after {
+      top: -7px;
+      left: -7px;
+      padding: 7px;
+      box-shadow: 0 0 0 4px $navy;
+      transition: transform 0.2s, opacity 0.2s;
+      transform: scale(.8);
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      content: '';
+      box-sizing: content-box;
+    }        
+  } 
+
+  &__footer {
+    padding: 40px 0;
+  }
+
+  &__footer-message {
+
+    @include breakpoint(small) {
+      max-width: 15rem;      
+    }
+
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 25rem;
+  }  
+
+}

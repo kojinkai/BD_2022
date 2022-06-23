@@ -1,0 +1,23 @@
+$headline: "league-gothic", sans-serif;
+$bodycopy: "calluna-sans", sans-serif;
+
+// Based on a base font size of 16px (1em)
+@mixin pix18 {
+  font-size: 1.125em;
+}
+
+@mixin pix22 {
+  font-size: 1.375em;
+}
+
+@mixin pix24 {
+  font-size: 1.5em;
+}
+
+@mixin pix30 {
+  font-size: 1.875em;
+}
+
+@mixin pix40 {
+  font-size: 2.5em;
+}

@@ -1,0 +1,173 @@
+@import '../../styles/_colours';
+@import '../../styles/_type';
+@import '../../styles/_breakpoints';
+
+.skills {
+
+  @include breakpoint(small) {
+    padding-bottom: 0;
+  }
+
+  background-color: $orange;
+  color: $white;
+
+  &__container {
+    @include breakpoint(large) {
+      flex-direction: row;
+      margin: 6.25rem auto;
+      max-width: 75rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;    
+  }
+
+  &__skill-disc {
+
+    @include breakpoint(small) {
+      margin: 25px auto;
+    }
+
+    @include breakpoint(medium) {
+      margin: 25px auto 35px;
+    }
+  }
+
+  &__skill-disc-title {
+
+    @include breakpoint(large) {
+      @include pix40;
+      line-height: 252px;
+
+      .no-touch & {
+        opacity: 0;
+        top: 42px;
+        transition: all .3s ease;
+      }
+
+      .no-touch .skills__skill-disc:hover & {
+        opacity: 1;
+        top: -12px;
+      }      
+    }
+
+    @include pix24;
+    display: block; 
+    font-family: $headline;
+    font-weight: 700;        
+    line-height: 142px;
+    opacity: 1;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase; 
+    top: -12px;
+    width: 100%;
+  }
+
+  &__skill-disc-graphic {
+
+    @include breakpoint(large) {
+      height: 250px;
+      width: 250px;
+    }
+
+    border: 12px solid $white;
+    border-radius: 50%;
+    height: 140px;    
+    margin: auto;
+    position: relative;
+    transition: all .3s ease;
+    width: 140px;    
+
+    &:before,
+    &:after {
+      content: '';
+      font-size: 6em;
+      font-weight: bold;
+      line-height: 252px;
+      opacity: 1;      
+      position: absolute;
+      top: -12px;
+      transition: all .3s ease;
+      z-index: 100;       
+    }
+
+    .skills__skill-disc:hover & {
+      color: $white;
+      
+      &:before,
+      &:after {
+        opacity: 0;
+        transform: scale(.7);
+      }
+
+      &:before {
+        left: 8%;
+      }
+
+      &:after {
+        right: 8%;
+      }
+    }
+    @include breakpoint(large) {
+      .no-touch & {
+        &--html5 {
+          &:after {
+            content: '>';
+            right: 14%;
+            top: -15px;
+          }
+          &:before {
+            content: '<';
+            left: 14%;
+            top: -15px;
+          }
+        }
+
+        &--css {
+          &:after {
+            content: '}';
+            right: 26%;
+            top: -15px;
+          }
+          &:before {
+            content: '{';
+            left: 25%;
+            top: -15px;
+          }
+        }
+
+        &--js {
+          &:after {
+            content: ')';
+            right: 26%;
+            top: -12px;
+          }
+          &:before {
+            content: '(';
+            left: 24%;
+            top: -12px;
+          }
+        }
+      }
+    }
+  }
+
+  &__skill-description {
+    @include breakpoint(small) {
+      display: none;
+    }
+
+    @include breakpoint(medium) {
+      @include pix24;
+    }
+
+    @include pix18;
+    color: $white;
+    font-family: $bodycopy;
+    font-weight: 700;
+    text-align: center;
+    transition: color .3s ease;
+  } 
+}

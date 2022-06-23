@@ -1,0 +1,58 @@
+@import '../../styles/_colours';
+@import '../../styles/_type';
+@import '../../styles/_breakpoints';
+
+.intro {
+
+  @include breakpoint(medium) {
+    padding-top: 80px;
+  }
+
+  @include breakpoint(large) {
+    padding-top: 100px;
+  }
+
+  background-color: $royal;
+  color: $white;
+  text-align: center;
+
+  &__logo {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 15px 50px;
+    border-bottom: 1px solid $white;
+    max-width: 21rem;
+    width: 100%;  
+  }
+
+  &__messaging {
+   
+    margin-left: auto;
+    margin-right: auto; 
+    max-width: 48rem;
+  }
+
+  &__text {
+
+    @include breakpoint(small) {
+      font-size: 1.2rem; 
+    }
+
+    font-family: $bodycopy;
+    font-size: 1.5625rem;
+    font-weight: 700;
+
+    &:last-child {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__icon {
+    background-color: $royal;
+    bottom: 18px;    
+    padding: 0 15px;
+    position: relative;    
+    font-size: 34px;
+  }
+}

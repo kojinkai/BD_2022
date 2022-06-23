@@ -1,0 +1,63 @@
+@import '../../styles/_colours';
+@import '../../styles/_type';
+@import '../../styles/_breakpoints';
+
+.sidemenu {
+  background: $darkgrey;  
+  bottom: 0;
+  overflow: scroll;
+  left: 0; 
+  position: absolute; 
+  right: 0;
+  top: 0;
+
+  &__view {
+    bottom: 0;
+    box-shadow: -3px 0 9px 2px $menushadow;
+    overflow: scroll;
+    left: 0; 
+    overflow: scroll;
+    position: absolute; 
+    right: 0;
+    top: 0;
+    transition: transform .28s ease-out;
+    user-select: none;  
+    -webkit-overflow-scrolling: touch;    
+  }
+
+  &__nav {
+    background-color: $navbg;
+    bottom: 0;
+    left: 0; 
+    position: absolute; 
+    right: 0;
+    top: 0; 
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    @include pix22;
+    border-bottom: 1px solid $menuitemborder;
+    color: $white;
+    font-family: $bodycopy;
+    font-weight: 700;
+    line-height: 1.875rem;
+    margin-right: 20px;
+    padding: 20px 0 20px 60px;
+    position: relative;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

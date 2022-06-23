@@ -1,0 +1,61 @@
+@import 'breakpoints';
+@import 'type';
+
+@mixin container {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+.page-wrap {
+  @include breakpoint(medium) {
+    top: 90px;
+  }
+
+  @include breakpoint(large) {
+    top: 90px;
+  }
+
+  background-color: $royal;  
+  bottom: 0;
+  left: 0;
+  position: absolute; 
+  right: 0;
+  top: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+
+  @include breakpoint(small) {
+    margin-top: 69px;
+    padding-top: 20px;
+  }
+
+  bottom: 0;
+  left: 0;
+  overflow: scroll;
+  padding: 75px 20px 20px;  
+  position: absolute; 
+  right: 0;
+  top: 0;
+
+  &__main-title {
+
+    @include pix30;
+    font-family: $headline;
+    font-weight: 400;
+    margin-bottom: 35px;
+    text-align: center;
+
+    @include breakpoint(large) {
+      @include pix40;
+    }
+
+  }
+}
