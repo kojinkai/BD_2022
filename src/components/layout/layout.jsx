@@ -10,18 +10,20 @@ function Layout({ children }) {
 
   const location = useLocation();
 
-  const getRouteColorFromLocation = location => ({
+  const routeColors = {
     intro: '#2e4066',
     skills: '#f05000',
     profile: '#2e4066',
     contact: '#9ca2ad'
-  })[location];
+  };
+
+  const currentRouteColor = routeColors[location.pathname.substr(1)];
 
   return (
     <div className="page-wrap">
       <Masthead />
       <main>
-        <Sidemenu activeroute={location.pathname.substr(1)} routecolors={getRouteColorFromLocation}>
+        <Sidemenu backgroundColor={currentRouteColor}>
           <Outlet />
         </Sidemenu>
       </main>

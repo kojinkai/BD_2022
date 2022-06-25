@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './page-link.scss';
 
-class Button extends Component {
-  render() {
-    return (
-      <span className="page-link">
-        <Link to="/profile">{this.props.text}</Link>
-      </span>
-    );
-  }
+function PageLink({ text }) {
+  return (
+    <span className="page-link">
+      <Link to="/profile">{text}</Link>
+    </span>
+  );
 }
 
-export default Button;
+export default PageLink;
