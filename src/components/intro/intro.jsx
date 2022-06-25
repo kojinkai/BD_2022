@@ -1,6 +1,6 @@
 import React from 'react';
 import PageLink from '../page-link/page-link';
-import logo from './boxdeluxe_logo.svg';
+import logo from '../../assets/boxdeluxe_logo.svg';
 import './intro.scss';
 
 function Intro() {

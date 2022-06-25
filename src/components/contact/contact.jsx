@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './boxdeluxe_footer.svg';
+import logo from '../../assets/boxdeluxe_footer.svg';
 import './contact.scss';
 
 class Contact extends Component {
