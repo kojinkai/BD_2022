@@ -2,10 +2,8 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  // Redirect,
 } from 'react-router-dom';
 import './App.scss';
-// import Sidemenu from './components/sidemenu/sidemenu';
 import Layout from './components/layout/layout';
 import Intro from './components/intro/intro';
 import Skills from './components/skills/skills';
@@ -21,7 +19,7 @@ function App() {
           <Route path="intro" element={<Intro />} />
           <Route path="skills" element={<Skills />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="contact" element={Contact} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </Router>
